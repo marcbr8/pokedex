@@ -80,7 +80,7 @@ class App extends Component {
             <div className="left-upper-corner"></div>
             <div className="right-upper-corner"></div>
         </div>
-  
+
           <div className ="container" id="search-container">
             <div className="row no-gutters">
               <div className="col">
@@ -100,7 +100,7 @@ class App extends Component {
           {this.renderRows(filteredPokemon)}
           </div>
           <div style={{margin:10+'px'}}>
-          <button type="button" className="btn btn-primary btn-lg" onClick={this.loadNextBadge}>Load next 20 pokemon</button>
+          <button type="button" className="btn btn-primary btn-lg" onClick={this.loadNextBadge}>Carga los siguiente 20 pokemon</button>
           </div>
         </div>
       );
