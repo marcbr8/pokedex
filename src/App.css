@@ -29,6 +29,9 @@
   border-left: 30px solid transparent;
   border-bottom: 30px solid transparent;
 }
+#search-container input{
+ background-color: #f2f7d7;
+}
 
 #main-container{
   margin-left:200px;
@@ -37,6 +40,7 @@
   padding-right: 300px;
 
 }
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;

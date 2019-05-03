@@ -80,13 +80,13 @@ class App extends Component {
             <div className="left-upper-corner"></div>
             <div className="right-upper-corner"></div>
         </div>
-
+  
           <div className ="container" id="search-container">
             <div className="row no-gutters">
               <div className="col">
               </div>
-              <div className="col-6">
-                <div className="input-group mb-3">
+              <div className="col-7">
+                <div className="input-group mb-3 shadow-lg">
                   <input type="text" className="form-control" onChange={this.onchange} placeholder="Filtra pokemons por nombre..." aria-label="Username" aria-describedby="basic-addon1">
                   </input>
                 </div>
