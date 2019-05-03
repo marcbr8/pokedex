@@ -23,11 +23,8 @@ class Card extends Component {
 
   addTypes(pokemon){
     const types = pokemon.types;
-    console.log('primer tipo de ' + pokemon.name);
-    console.log(types.length);
-    console.log(types[0]);
-    return types.map((type) =>
-     <span className="badge badge-light text-uppercase"> {type.type.name}</span>
+    return types.map((type, i) =>
+     <span key={pokemon.name + '-type-' + i}className="badge badge-light text-uppercase"> {type.type.name}</span>
     );
   }
 
