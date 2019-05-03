@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Card from './components/Card'
-
+const API_ENDPOINT = 'https://pokeapi.co/api/v2/pokemon';
 class App extends Component {
+
   constructor(props){
     super(props);
     this.state = {
       items : [],
       isLoaded : false,
-      search : ""
+      search : "",
+      badge: 1
     }
   }
 
   componentDidMount() {
-    fetch('https://pokeapi.co/api/v2/pokemon')
+    this.loadPokemon(API_ENDPOINT);
+  }
+
+  loadPokemon(endpoint){
+    fetch(endpoint)
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -47,6 +53,14 @@ class App extends Component {
 
   onchange = e => {
     this.setState({ search : e.target.value });
+  }
+
+  loadNextBadge = e =>{
+    this.setState({
+      badge : this.state.badge + 1
+    });
+    this.loadPokemon(API_ENDPOINT + '?offset=' + 20 *this.state.badge + '&limit=20');
+
   }
 
   render(){
@@ -83,6 +97,9 @@ class App extends Component {
           </div>
           <div className ="container" id="mainContainer">
           {this.renderRows(filteredPokemon)}
+          </div>
+          <div style={{margin:10+'px'}}>
+          <button type="button" className="btn btn-primary btn-lg" onClick={this.loadNextBadge}>Load next 20 pokemon</button>
           </div>
         </div>
       );
