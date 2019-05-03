@@ -1,4 +1,5 @@
 .bs-callout {
+	margin-top: 3px;
     border-left: 1px solid #eee;
     border-left-width: 5px;
 }
