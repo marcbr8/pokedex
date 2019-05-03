@@ -27,8 +27,8 @@ class Evolution extends Component {
 		}
 		if(this.state.species.evolves_from_species!=null){
 			return <div className="bs-callout bs-callout-danger">
-			<p>Evoluciona de</p>
-			<h4>{this.state.species.evolves_from_species.name}</h4>
+			<p><small>Evoluciona de</small></p>
+			<h6>{this.state.species.evolves_from_species.name}</h6>
 			</div>
 		}
 		return <span></span>

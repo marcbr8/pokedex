@@ -1,0 +1,18 @@
+.pokemon-id {
+  position: absolute;
+  top: 88px;
+  left:0px;
+  background-color: #b6bcc1eb;
+  color: #9e7613;
+}
+.pokemon-type{
+	border: 1px solid #b6bcc1eb;
+	color: #525658eb;
+  	padding: 2px;
+  	margin: 2px;
+  	font-size: 14px;
+    border-radius: 6px;
+}
+.dark-grey-background {
+  background-color: #c6cbd06e;
+}
