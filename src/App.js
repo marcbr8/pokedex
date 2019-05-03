@@ -62,6 +62,10 @@ class App extends Component {
 
       return (
         <div className="App">
+        <div className="ribbon-container sticky">
+            <div className="left-upper-corner"></div>
+            <div className="right-upper-corner"></div>
+        </div>
 
           <div className ="container" id="searchContainer">
             <div className="row no-gutters">

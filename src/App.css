@@ -2,3 +2,62 @@
   text-align: center;
 }
 
+.dark-grey-background {
+  background-color: #c6cbd06e;
+}
+
+.pokemon-id {
+  position: absolute;
+  bottom: 100px;
+  left:0px;
+  background-color: #b6bcc1eb;
+  color: #9e7613;
+}
+
+.ribbon-container{
+  position: relative;
+}
+
+.left-upper-corner{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-right: 30px solid transparent;
+  border-top: 30px solid #000000;
+  border-left: 30px solid #000000;
+  border-bottom: 30px solid transparent;
+}
+
+.right-upper-corner {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-right: 30px solid #000000;
+  border-top: 30px solid #000000;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+}
+
+#mainContainer {
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
