@@ -39,7 +39,7 @@ class Card extends Component {
     }
     else{
       return(
-        <div className="card shadow-lg" style={{width:250 +'px'}} >
+        <div className="card shadow-lg" >
           <div className="text-center dark-grey-background">
             <img  className="card-img-top mb-3 w-auto" alt="" src={pokemon.sprites.front_default}>
             </img>

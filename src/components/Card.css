@@ -1,5 +1,7 @@
 .card {
 	height: 279px;
+	width: 220px;
+	margin-bottom: 30px;
 }
 .pokemon-id {
   position: absolute;

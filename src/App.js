@@ -39,12 +39,12 @@ class App extends Component {
         </div>
       );
       if((i+1) % 3 === 0) {
-        finalArr.push(<div key={i + '-row'} className ="row mt-4">{columns}</div>);
+        finalArr.push(<div key={i + '-row'} className ="row">{columns}</div>);
         columns = [];
       }
     });
     if(columns.length !== 0){
-      finalArr.push(<div key='last-row' className ="row mt-4">{columns}</div>);
+      finalArr.push(<div key='last-row' className ="row">{columns}</div>);
       columns = [];
     }
 
@@ -81,11 +81,11 @@ class App extends Component {
             <div className="right-upper-corner"></div>
         </div>
 
-          <div className ="container" id="searchContainer">
+          <div className ="container" id="search-container">
             <div className="row no-gutters">
               <div className="col">
               </div>
-              <div className="col">
+              <div className="col-6">
                 <div className="input-group mb-3">
                   <input type="text" className="form-control" onChange={this.onchange} placeholder="Filtra pokemons por nombre..." aria-label="Username" aria-describedby="basic-addon1">
                   </input>
@@ -95,7 +95,8 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div className ="container" id="mainContainer">
+
+          <div className ="container" id="main-container">
           {this.renderRows(filteredPokemon)}
           </div>
           <div style={{margin:10+'px'}}>

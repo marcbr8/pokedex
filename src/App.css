@@ -30,6 +30,13 @@
   border-bottom: 30px solid transparent;
 }
 
+#main-container{
+  margin-left:200px;
+  margin-right:250px;
+  padding-left: 130px;
+  padding-right: 300px;
+
+}
 .sticky {
   position: -webkit-sticky;
   position: sticky;
