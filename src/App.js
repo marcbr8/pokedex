@@ -24,6 +24,27 @@ class App extends Component {
   }
 
 
+  renderRows(pokemons){
+    let finalArr = [], columns = [];
+    pokemons.forEach ((pokemon, i) => {
+      columns.push(
+        <div key ={pokemon.name} className="col-md-4">
+          <Card pokemon={pokemon}></Card> 
+        </div>
+      );
+      if((i+1) % 3 === 0) {
+        finalArr.push(<div key={i + '-row'} className ="row mt-4">{columns}</div>);
+        columns = [];
+      }
+    });
+    if(columns.length !== 0){
+      finalArr.push(<div key='last-row' className ="row mt-4">{columns}</div>);
+      columns = [];
+    }
+
+    return finalArr;
+  }
+
   render(){
     let { isLoaded, items } = this.state;
 
@@ -31,21 +52,11 @@ class App extends Component {
       return (<div> Fetching pokemons </div>);
     }
     else {
-      console.log(items.results[0]);
       return (
         <div className="App">
+          
           <div className ="container" id="mainContainer">
-            <div key='row' className ="row mt-4">
-              <div key ={items.results[0].name} className="col-md-4">
-                <Card pokemon={items.results[0]}></Card> 
-              </div>
-              <div key ={items.results[1].name} className="col-md-4">
-                <Card pokemon={items.results[1]}></Card> 
-              </div>
-              <div key ={items.results[2].name} className="col-md-4">
-                <Card pokemon={items.results[2]}></Card> 
-              </div>
-            </div>
+          {this.renderRows(items.results)}
           </div>
         </div>
       );
