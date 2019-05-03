@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './components/Card'
 
+import Card from './components/Card'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       items : [],
-      isLoaded : false
+      isLoaded : false,
+      search : ""
     }
   }
 
@@ -23,10 +24,9 @@ class App extends Component {
       });
   }
 
-
-  renderRows(pokemons){
+  renderRows(filteredPokemon){
     let finalArr = [], columns = [];
-    pokemons.forEach ((pokemon, i) => {
+    filteredPokemon.forEach ((pokemon, i) => {
       columns.push(
         <div key ={pokemon.name} className="col-md-4">
           <Card pokemon={pokemon}></Card> 
@@ -45,23 +45,45 @@ class App extends Component {
     return finalArr;
   }
 
+  onchange = e => {
+    this.setState({ search : e.target.value });
+  }
+
   render(){
-    let { isLoaded, items } = this.state;
+    let { isLoaded, items, search } = this.state;
 
     if(!isLoaded) {
       return (<div> Fetching pokemons </div>);
     }
     else {
+      var filteredPokemon = items.results.filter( pokemon => {
+        return pokemon.name.indexOf(search.toLowerCase()) !== -1
+      });
+
       return (
         <div className="App">
-          
+
+          <div className ="container" id="searchContainer">
+            <div className="row no-gutters">
+              <div className="col">
+              </div>
+              <div className="col">
+                <div className="input-group mb-3">
+                  <input type="text" className="form-control" onChange={this.onchange} placeholder="Filtra pokemons por nombre..." aria-label="Username" aria-describedby="basic-addon1">
+                  </input>
+                </div>
+              </div>
+              <div className="col">
+              </div>
+            </div>
+          </div>
           <div className ="container" id="mainContainer">
-          {this.renderRows(items.results)}
+          {this.renderRows(filteredPokemon)}
           </div>
         </div>
       );
     }
-  }
+}
 }
 
 export default App;
