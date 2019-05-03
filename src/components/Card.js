@@ -18,8 +18,17 @@ class Card extends Component {
         isLoaded : true,
         pokemon : json
       })
-  });
+    });
+  }
 
+  addTypes(pokemon){
+    const types = pokemon.types;
+    console.log('primer tipo de ' + pokemon.name);
+    console.log(types.length);
+    console.log(types[0]);
+    return types.map((type) =>
+     <span className="badge badge-light text-uppercase"> {type.type.name}</span>
+    );
   }
 
   render(){
@@ -41,7 +50,7 @@ class Card extends Component {
           </div>
           <div className="card-body">
             <h5 className="card-title text-capitalize">{ pokemon.name } </h5>
-            <span className="badge badge-light text-uppercase"> {pokemon.types[0].type.name} </span>
+            {this.addTypes(pokemon)}
           </div>
         </div>
       ) 
