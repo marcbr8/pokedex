@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Evolution from './Evolution'
 
 class Card extends Component {
 
@@ -24,7 +25,7 @@ class Card extends Component {
   addTypes(pokemon){
     const types = pokemon.types;
     return types.map((type, i) =>
-     <span key={pokemon.name + '-type-' + i}className="badge badge-light text-uppercase"> {type.type.name}</span>
+     <span key={pokemon.name + '-type-' + i} className="badge badge-light text-uppercase"> {type.type.name}</span>
     );
   }
 
@@ -48,6 +49,7 @@ class Card extends Component {
           <div className="card-body">
             <h5 className="card-title text-capitalize">{ pokemon.name } </h5>
             {this.addTypes(pokemon)}
+            <Evolution pokemon={pokemon}></Evolution>
           </div>
         </div>
       ) 
